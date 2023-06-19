@@ -2,7 +2,7 @@ import mysql from "mysql";
 const pool = mysql.createPool({
     user: "root",
     password: "",
-    database: "IDE",
+    database: "Review_Tas",
     host: "localhost",
 });
 

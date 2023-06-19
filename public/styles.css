@@ -789,6 +789,7 @@ input[type="submit"].followed{
 .img-account-publik-tas{
     width: 28%;
     height: 100%;
+    max-height: 300px;
     object-fit: contain;
     margin: 0px;
     box-sizing: border-box;

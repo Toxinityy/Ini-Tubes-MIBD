@@ -5,7 +5,7 @@ import path from "path";
 const pool = mysql.createPool({
     user: "root",
     password: "",
-    database: "IDE",
+    database: "Review_Tas",
     host: "localhost",
 });
 

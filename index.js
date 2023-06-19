@@ -458,6 +458,16 @@ app.post('/logout', checkMiddlewarePublicOnly, async (req, res)=>{
     req.session.role = 0;
     res.redirect('/');
 });
+app.post('/logout-admin', checkMiddlewareAdminOnly, async (req, res)=>{
+    req.session.logged_in = false;
+    req.session.email = null;
+    req.session.username = null;
+    req.session.idPengguna = null;
+    req.session.namaLengkap = null;
+    req.session.foto = null;
+    req.session.role = 0;
+    res.redirect('/');
+});
 app.post('/my-account', upload.single('image'), async (req, res)=>{
     if(req.file){
         const fotoPath = '../img/'+req.file.filename;
