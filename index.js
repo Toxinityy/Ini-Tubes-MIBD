@@ -56,6 +56,7 @@ app.use(
     })
 );
 const upload = multer({dest: 'uploads'});
+const upload2 = multer({storage: fileStorage, fileFilter: fileFilter});
 
 const pool = mysql.createPool({
     user: "root",
@@ -486,7 +487,7 @@ app.post('/logout-admin', checkMiddlewareAdminOnly, async (req, res)=>{
     req.session.role = 0;
     res.redirect('/');
 });
-app.post('/my-account', upload.single('image'), async (req, res)=>{
+app.post('/my-account', upload2.single('image'), async (req, res)=>{
     if(req.file){
         const fotoPath = '../img/'+req.file.filename;
         const idPengguna = req.session.idPengguna;
