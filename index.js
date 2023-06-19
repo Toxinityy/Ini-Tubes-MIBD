@@ -17,7 +17,7 @@ import { getAccountData } from "./models/accountSearchModel.js";
 import productDetailsController from './controllers/product-details_controller.js';
 import addReviewController from './controllers/add-review_controller.js';
 
-const PORT = 4000;
+const PORT = 8080;
 const app = express();
 const sessionStore = memoryStore(session);
 const fileStorage = multer.diskStorage({
@@ -272,7 +272,6 @@ app.get('/adminlogin', async(req, res) => {
             submitProblem: ''
         });
     }
-    res.render('login-admin');
 });
 app.get('/dashboard-admin', async(req, res) => {
     try{

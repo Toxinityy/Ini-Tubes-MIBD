@@ -166,7 +166,7 @@ INSERT INTO Publik (password, username, firstName, lastName, emailPengguna, acco
 
 -- Insert data ke Admin
 INSERT INTO Admin (password, username, firstName, lastName, emailPengguna, accountCreatedDate) VALUES
-('adminpass', 'admin1', 'Admin', 'User', 'admin@example.com', '2023-01-01');
+('adminpass', 'admin1', 'Admin', 'User', 'admin@ardent.com', '2023-01-01');
 
 -- Insert data ke Tas
 INSERT INTO Tas (namaTas, deskripsi, warna, panjang, lebar, tinggi, foto, idMerk, idDesigner) VALUES
