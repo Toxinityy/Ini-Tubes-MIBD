@@ -274,6 +274,25 @@ app.get('/adminlogin', async(req, res) => {
     }
     res.render('login-admin');
 });
+app.get('/dashboard-admin', async(req, res) => {
+    try{
+        const conn = await dbConnect();
+        const topten_review = await getTopTenRating(conn);
+        if(req.session.logged_in && req.session.role == 2){
+            res.render("dashboard-admin",{
+            user: req.session.username,
+            topten_review
+        });
+        } else if(req.session.logged_in && req.session.role == 1){
+            res.redirect('/dashboard-public');
+        }
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).render('error', { message: 'Internal Server Error' });
+    }
+});
+
 app.get('/select-input', async(req, res) => {
     res.render('admin/select-input');
 });
